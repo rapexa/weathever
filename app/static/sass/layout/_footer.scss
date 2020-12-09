@@ -1,0 +1,45 @@
+/*
+ * Footer Styles
+ */
+.site-footer{
+	background: $secondary-color;
+	padding: 50px 0;
+
+	.subscribe-form{
+		position: relative;
+		margin-bottom: 30px;
+
+		input[type="text"]{
+			padding: 20px 100px 20px 20px;
+			background: #1e202b;
+			width: 100%;
+			color: white;
+		}
+		input[type="submit"]{
+			position: absolute;
+			right: 5px;
+			top:5px;
+			bottom: 5px;
+		}
+	}
+
+	.social-links{
+		a{
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			border-radius: 50%;
+			background: #1e202b;
+			color: $accent-color;
+			text-align: center;
+			line-height: 2;
+			transition: .3s ease;
+			@include em(20);
+
+			&:hover{
+				background: $accent-color;
+				color: white;
+			}
+		}
+	}
+}

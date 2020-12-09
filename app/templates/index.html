@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<meta charset="utf-8" dir="rtl">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>ایستگاه هواشناسی</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="static/style.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="/" class="branding">
+						<img src="static/images/logo.png" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">ایستگاه هواشناسی</h1>
+							<small class="site-description">Rezvan.ghd</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item"><a href="/">خانه</a></li>
+							<li class="menu-item"><a href="history">تاریخچه</a></li>
+							<li class="menu-item"><a href="photos">تصاویر</a></li>
+							<li class="menu-item"><a href="contact">ارتباط با ما</a></li>
+							<li class="menu-item current-menu-item"><a href="/logout">خروج</a></li>
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="static/images/acity.jpg">
+				<div class="container">
+					<form class="find-location" action="" method="POST">
+						<input type="text" placeholder="Find your location... " name="name" id="name" value="mashhad">
+						<input type=submit value="جستجو">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						{% for weather in data.datas %}
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">Weather</div>
+								<div class="date">MG</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{weather.name}}</div>
+								<div class="degree">
+									<div class="num">{{weather.tempmanualc}}<sup>o</sup>C</div>
+								</div>
+								<div class="location">{{weather.weatherdescription}}</div>
+								<br>
+							</div>
+						</div>
+						<div class="forecast">
+							<div class="forecast-header">
+								<div class="day">اطلاعات</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<span><img src="static/images/icon-umberella.png" alt=""> {{weather.humidity}}%</span>
+								<br><br>
+								<span><img src="static/images/icon-wind.png" alt=""> {{weather.windspeed}} m/s</span>
+								<br><br>
+								<span><img src="static/images/icon-compass.png" alt=""> {{weather.timestamp}}</span>
+								<br><br>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<main class="main-content">
+				<div class="fullwidth-block" data-bg-color="#262936">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="news">
+									<h3>این سایت میتونه به شما امکان دسترسی به شرایط آب و هوایی رو بده</h3>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="news">
+									<div class="date"></div>
+									<h3>با آگاهی از شرایط آب و هوایی شما میتونین ترسالی و خشکسالی رو پیش بینی کنین</h3>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="news">
+									<div class="date"></div>
+									<h3><a href="#">امکان دسترسی به اطلاعات آب و هوایی حال با جستحوی نام شهر وجود دارد</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<h2 class="section-title">قابلیت ها</h2>
+								<ul class="arrow-feature">
+									<li>
+										<h3><a href="/">خانه</a></h3>
+										<p>در این قسمت شما میتونین دمای روز جاری با جستجوی نام شهر رو ببینید</p>
+									</li>
+									<li>
+										<h3><a href="history">تاریخچه</a></h3>
+										<p>در این قسمت شما میتونین آب و هوای روزهای گذشته رو مشاهده کنید</p>
+									</li>
+									<li>
+										<h3><a href="photos">تصاویر</a></h3>
+										<p>در این قسمت شما میتونین تصاویر چند جاذبه گردشگری رو ببینید</p>
+									</li>
+									<li>
+										<h3><a href="contact">ارتباط با ما</a></h3>
+										<p>در این قسمت شما میتونین از طریق پیامک با من ارتباط داشته باشید</p>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<h2 class="section-title">درباره ما</h2>
+								<p style="font-size: large;">
+									آب و هوا یکی از پدیده های مهم و تاثیر گذار بروی زمین می باشد این سایت با قصد شناخت وضعیت آب و هوا در گذشته و پیش بینی آینده راه اندازی شده است
+								</p>
+							</div>
+							<div class="col-md-4">
+								<h2 class="section-title">تصاویر</h2>
+								<div class="photo-grid">
+									<a href="#"><img src="static/images/1@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/2@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/3@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/4@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/5@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/6@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/7@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<a href="#"><img src="static/images/8@2.jpg" style="width: 110px; height: 110px;" alt="#"></a>
+									<!--<a href="#"><img src="static/images/thumb-9.jpg" alt="#"></a>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main> <!-- .main-content -->
+
+			<footer class="site-footer">
+				<div class="container">
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+
+						<div class="text-muted">Copyleft by Rezvan.ghd
+							<script type="text/javascript">
+								document.write(new Date().getFullYear());
+							</script>
+						</div>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div>
+		
+		<script src="static/js/jquery-1.11.1.min.js"></script>
+		<script src="static/js/plugins.js"></script>
+		<script src="static/js/app.js"></script>
+		
+	</body>
+
+</html>

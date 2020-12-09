@@ -1,0 +1,225 @@
+/*
+ * Header Styles
+ */
+
+.site-header{
+	padding: 50px 0;
+	.branding{
+		float: left;
+
+		.logo,.logo-type{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.logo{margin-right: 10px;}
+		.site-title{
+			margin-bottom: 5px;
+			@include em(16);
+			color: white;
+		}
+		.site-description{
+			@include em(10);
+			display: block;
+			color: $body-color;
+		}
+	}
+}
+
+.main-navigation{
+	float: right;
+
+	.menu-toggle,.menu{vertical-align: middle}
+
+	.menu-toggle{
+		background: none;
+		border: 2px solid transparent;
+		color: white;
+		padding: 20px;
+		border-radius: 40px;
+		transition: .3s ease;
+		display: none;
+		outline: none;
+		@media screen and (max-width:990px){display: inline-block}
+
+		&:hover, &:active{
+			border-color: $accent-color;
+			color: $accent-color;
+		}
+	}
+
+	.menu{
+		list-style:none;
+		display: inline-block;
+		@include clearfix;
+
+		@media screen and (max-width:990px){display: none}
+
+		.menu-item{
+			float: left;
+			margin-left: 10px;
+			a{
+				padding: 5px 25px;
+				border: 2px solid transparent;
+				border-radius: 30px;
+				color: white;
+				transition: .3s ease;
+				font-weight: 400;
+			}
+
+			&.current-menu-item,&:hover{
+				a{
+					border-color: $accent-color;
+					color: $accent-color;
+				}
+			}
+		}
+	}
+}
+
+.mobile-navigation{
+	padding: 30px 0 0;
+	clear: both;
+	display: none;
+	@media screen and (min-width:991px){display: none!important}
+
+	.menu{
+		background: $secondary-color;
+		list-style: none;
+		text-align: center;
+		border-radius: 10px;
+		overflow: hidden;
+
+		a{
+			padding: 20px;
+			display: block;
+			color: white;
+		}
+
+		.menu-item{
+			border-bottom: 1px solid rgba(255,255,255,.1);
+			&:last-child{border-bottom: none}
+
+			&.current-menu-item a{
+				color: $accent-color;
+			}
+		}
+	}
+}
+
+.hero{
+	background-size: cover;
+	padding: 70px 0;
+	min-height: 350px;
+}
+
+.find-location{
+	position: relative;
+	margin-bottom: 70px;
+	input[type="text"]{
+		width: 100%;
+		padding: 20px 50px 20px 20px;
+		background: $bg-color;
+		color: white;
+	}
+	input[type="submit"]{
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		bottom: 5px;
+		padding: 0 40px;
+	}
+}
+
+.forecast-container{
+	width: 100%;
+	background: #323544;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	margin-top: -150px;
+	margin-bottom: 50px;
+
+	.forecast{
+		display: table-cell;
+		vertical-align: top;
+
+		&:nth-child(even){
+			background-color: #262936;
+		}
+
+		@media screen and (max-width: 990px){
+			display: block;
+			width: 16.6667%;
+			float: left;
+		}
+
+		&.today{
+			width: 420px;
+
+			.forecast-header{
+				@include clearfix;
+				.day{float: left}
+				.date{float: right}
+				
+			}
+			.forecast-content{
+				text-align: left;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+			.location{
+				@include em(18);
+				font-weight: 400;
+			}
+			.degree{
+				.num,.forecast-icon{
+					display: inline-block;
+					vertical-align: middle;
+				}
+				.num{
+					@include rem(90);
+					margin-right: 30px;
+				}
+			}
+			span{
+				margin-right: 20px;
+				img{
+					margin-right: 5px;
+					vertical-align: middle;
+				}
+			}
+
+			@media screen and (max-width: 990px){
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.forecast-header{
+			background: rgba(0,0,0,.1);
+			padding: 10px;
+			text-align: center;
+			font-weight: 400;
+		}
+
+		.forecast-icon{
+			height: 50px;
+		}
+
+		.forecast-content{
+			padding:  50px 20px 10px;
+			text-align: center;
+
+			.forecast-icon{margin-bottom: 20px;}
+
+			.degree{
+				@include em(24);
+				color: white;
+				font-weight: 700;
+			}
+			small{@include em(16)}
+		}
+	}
+}
