@@ -1,6 +1,6 @@
 # weather
 
-This advance project is done for school teaching classes as a project series.
+This advance project is done for flask teaching classes as a project series.
 
 ## Todolist :
 - [x] start project
